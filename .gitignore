@@ -6,9 +6,6 @@ __pycache__/
 # Virtual environment
 .myvenv/
 
-# Project report
-Project_Report_Ganga_Joshi/
-*.docx
 
 # C extensions
 *.so

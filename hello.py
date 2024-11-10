@@ -43,11 +43,18 @@ def product(id):
 def greet(name = None):
     return render_template('greet.html', name = name)
 
-@app.route("/users/")
-def users():
+@app.get("/users/")
+def users_get():
     firstName = request.args.get('fname')
     lastName = request.args.get('lname')
     print(request.args)
+    return f"<h1>Users page: {firstName} {lastName}</h1>"
+
+@app.post("/users/")
+def users_post():
+    firstName = request.form['fname']
+    lastName = request.form['lname']
+    print(request.form)
     return f"<h1>Users page: {firstName} {lastName}</h1>"
 
 @app.route("/users/<username>/")
